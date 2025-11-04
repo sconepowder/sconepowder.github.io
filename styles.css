@@ -87,6 +87,14 @@ body.open::before{
   text-shadow: 0 2px 0 #fff;
 }
 
+.letter img{
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  margin: 1em 0;
+  box-shadow: 0 4px 12px rgba(0,0,0,.15);
+}
+
 .sig{
   font-size: 1em;
   letter-spacing:.5px;
