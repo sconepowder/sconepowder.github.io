@@ -1,0 +1,103 @@
+:root{
+  --pink:#ff5aa7;
+  --ink:#ff3f93;
+  --paper:#ffeef7;
+  --shadow: 0 18px 40px rgba(0,0,0,.25), 0 6px 14px rgba(0,0,0,.18);
+}
+
+*{ box-sizing:border-box; }
+html,body{ height:100%; margin:0; }
+
+.gate{
+  position:fixed; inset:0;
+  display:grid; place-items:center;
+  background:#000;
+  z-index:10;
+  transition:opacity .3s ease;
+}
+.gate.fade-out{ opacity:0; }
+
+.open-btn{
+  font: 700 1.25rem system-ui, Segoe UI, Arial, sans-serif;
+  color:#fff;
+  background:#111;
+  border:2px solid #fff;
+  border-radius:14px;
+  padding:14px 28px;
+  letter-spacing:.5px;
+  box-shadow: 0 0 0 4px rgba(255,255,255,.1);
+  cursor:pointer;
+  transition: transform .07s ease, box-shadow .2s ease;
+}
+.open-btn:active{ transform:scale(.98); }
+.open-btn:hover{ box-shadow:0 0 0 6px rgba(255,255,255,.18); }
+
+body.open{
+  background-image: url("Bea.jpg");
+  background-repeat: repeat;
+  background-position: center center;
+  background-size: contain;
+  background-attachment: fixed;
+}
+body.open::before{
+  content:"";
+  position:fixed; inset:0;
+  background: rgba(255,255,255,.55);
+  pointer-events:none;
+}
+
+.hidden{ display:none; }
+.fade-in{ animation: fade .35s ease both; }
+@keyframes fade{ from{opacity:0; transform:translateY(6px);} to{opacity:1; transform:none;} }
+
+.letter-wrap{
+  min-height:100vh;
+  display:grid; place-items:center;
+  padding: 6vmin 3vmin;
+}
+
+.letter{
+  max-width: 760px;
+  width: min(92vw, 760px);
+  background: var(--paper);
+  border: 3px dashed var(--ink);
+  border-radius: 22px;
+  padding: clamp(18px, 4vmin, 36px);
+  box-shadow: var(--shadow);
+  filter: drop-shadow(0 0 0 rgba(0,0,0,0));
+  text-align:center;
+  transform: rotate(-.4deg);
+}
+.letter h1, .letter p { font-family: "Satisfy", cursive; }
+.letter h1{
+  margin:0 0 .4em 0;
+  font-family: "Satisfy", cursive;
+  font-weight:700;
+  font-size: clamp(2.1rem, 5.5vw, 2.5rem);
+  color: var(--pink);
+  text-shadow: 0 3px 0 #fff, 0 6px 18px rgba(255, 40, 120, .22);
+}
+
+.letter p{
+  margin:.6em 0;
+  font-family: "Dancing Script", cursive;
+  font-size: clamp(1.35rem, 4.7vw, 1.6rem);
+  line-height:1.35;
+  color: var(--ink);
+  text-shadow: 0 2px 0 #fff;
+}
+
+.sig{
+  font-size: 1em;
+  letter-spacing:.5px;
+}
+
+.retry-btn{
+  position: fixed; left: 16px; bottom: 16px;
+  font: 600 0.95rem system-ui, Arial, sans-serif;
+  color:#fff; background: var(--ink);
+  border:none; border-radius: 10px;
+  padding:10px 14px;
+  box-shadow: 0 6px 18px rgba(0,0,0,.25);
+  cursor:pointer;
+}

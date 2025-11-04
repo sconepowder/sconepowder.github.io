@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>2 Years!</title>
+  <link rel="icon" type="image/jpeg" href="Favicon.jpg" />
+  <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <div id="gate" class="gate">
+    <button id="openBtn" class="open-btn" aria-label="Open">Open</button>
+    <noscript>
+      <p style="color:#fff;font-family:system-ui,Segoe UI,Arial,sans-serif;margin-top:1rem">
+        Enable JavaScript to view this page.
+      </p>
+    </noscript>
+  </div>
+
+  <main id="content" class="hidden">
+    <audio id="song" src="Rico.mp3" preload="auto" loop></audio>
+
+    <section class="letter-wrap">
+      <article class="letter">
+        <h1>Happy 2nd Year Anniversary, my super forever always and only one Baby Bea!!!</h1>
+        <p>
+          Hi my baby!!!
+          <br>
+          Thank you po so much for being with me and loving me for these past two years.
+          I'm so so so super grateful po to have you in my life.
+          You've always been there po for me during my darkest days, and you've always supported me po in everything I do.
+          I can't even describe po in words how much I appreciate and love you po.
+          When you first met me po two years ago, I had extreme depression that I had to take meds.
+          And then you came along and instantly you made me feel so special and loved.
+          You gave me purpose po in my life, and you made me want to be a better person po for you,
+          and I will continue trying to improve and be a better person po because you only deserve the best!
+          Then, even during the era po when i was extremely financially struggling, you were still there for me,
+          willing to do anything po for me just to make me happy.
+          You never once po complained about my situation, and it's something na I realized quite late po.
+          I super regret na I kinda took that for granted before, but now po I really really appreciate and value you so much more.
+          During our ups and downs in these two years po, you were always there po by my side, like, no matter what.
+          I can't even imagine po my life without you in it.
+          I super love you po so much and I promise po to always be there for you too, no matter what happens po!
+          I will continue improving po myself so that I can be the best partner po for you.
+          I'm really sorry po sometimes for putting my ego first before our relationship,
+          but I promise po to always work on that and be more understanding po towards you.
+          You are my everything po, my reason for living, and I will always cherish and love you po with all my heart.
+          Without you, I will still be stuck in that job that I hated,
+          and I wouldn't have any reason to continue living other than to survive.
+          But now po, because of you, I have a purpose po in life, and I want to live po to make you happy and proud of me and our super amazing relationship!
+          I love you po so so so so so muchie super mega forever ultimate always everlastingly endlessly eternally only one promise ONLY ONE PROMISE ONLY ONE PROMISE!!! A1 A1 A1 DRIVING SCHOOL!!!
+          I can't wait for our future po together, my baby Bea.
+          I know po that there will be more challenges and obstacles along the way,
+          but I know po na, because of how amazing we are, we can overcome anything po together!
+          I love you po so muchie smfuaeeeeeeeesoooopooopoopoooppppppppp!!!!!!!!!!!!!!!!!!!
+          Happy 2nd year anniversary my baby!!! More years po to come na super excited na ako po sa future natin po together!!!
+        </p>
+        <p>
+          - Yours forever and always, super and only one promise, <br>
+          <span class="sig">Your Bebi Babypoppa Joshua</span>
+        </p>
+      </article>
+    </section>
+  </main>
+
+  <script>
+    const btn = document.getElementById('openBtn');
+    const gate = document.getElementById('gate');
+    const content = document.getElementById('content');
+    const song = document.getElementById('song');
+
+    btn.addEventListener('click', async () => {
+      document.body.classList.add('open');
+      gate.classList.add('fade-out');
+      setTimeout(() => {
+        gate.style.display = 'none';
+        content.classList.remove('hidden');
+        content.classList.add('fade-in');
+      }, 350);
+
+      try {
+        await song.play();
+      } catch (err) {
+        console.warn('Autoplay blocked:', err);
+        const retry = document.createElement('button');
+        retry.textContent = 'Play Music';
+        retry.className = 'retry-btn';
+        retry.onclick = () => song.play();
+        document.body.appendChild(retry);
+      }
+    });
+  </script>
+</body>
+</html>
